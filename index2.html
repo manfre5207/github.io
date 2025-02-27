@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isotope Filter Example</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/isotope/3.0.6/isotope.pkgd.min.js"></script>
+    <style>
+        /* Estilos de la cuadrícula */
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .element-item {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            width: 30%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .element-item:hover {
+            transform: scale(1.05);
+        }
+        .filters-button-group .button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .filters-button-group .button.is-checked {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Botones de filtro -->
+        <div class="filters-button-group mb-4">
+            <button class="button" data-filter="*">Mostrar todos</button>
+            <button class="button is-checked" data-filter=".servicios">Servicios</button>
+            <button class="button" data-filter=".aasis">Aasis</button>
+        </div>
+
+        <!-- Elementos filtrables -->
+        <div class="grid">
+            <div class="element-item servicios">Servicio 1</div>
+            <div class="element-item servicios">Servicio 2</div>
+            <div class="element-item servicios">Servicio 3</div>
+            <div class="element-item aasis">Aasis 1</div>
+            <div class="element-item aasis">Aasis 2</div>
+            <div class="element-item aasis">Aasis 3</div>
+        </div>
+    </div>
+
+</body>
+</html>

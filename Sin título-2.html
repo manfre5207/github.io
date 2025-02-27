@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Embebido</title>
+</head>
+<body>
+
+    <div id="player"></div>
+
+    <script>
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '360',
+                width: '640',
+                videoId: 'TU_ID_DEL_VIDEO', // Reemplaza con el ID del video
+                playerVars: {
+                    'autoplay': 1,   // Reproduce automáticamente
+                    'controls': 0,   // Oculta los controles
+                    'showinfo': 0,   // Oculta el título del video
+                    'modestbranding': 1, // Quita el logo de YouTube
+                    'rel': 0,        // No muestra videos relacionados al final
+                    'playsinline': 1, // Permite reproducción en móviles
+                    'mute': 1        // Silencia el video (requerido para autoplay)
+                },
+                events: {
+                    'onReady': function(event) {
+                        event.target.playVideo();
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
