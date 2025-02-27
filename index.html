@@ -34,7 +34,7 @@
 .image-container {
     position: relative;
     width: 100%;
-    max-width: 800px; /* Ajusta el tamaño según sea necesario */
+    max-width: 800px; /* Tamaño máximo en pantallas grandes */
     margin: auto;
 }
 
@@ -43,7 +43,20 @@
     height: auto;
     opacity: 0.3; /* Ajusta la transparencia */
     transition: opacity 0.3s ease-in-out; /* Suavidad en la transición */
+    display: block; /* Evita espacios extra debajo de la imagen */
 }
+
+/* 📌 Mejoras en pantallas pequeñas */
+@media (max-width: 768px) {
+    .image-container {
+        max-width: 90%; /* Reduce el tamaño para que se vea mejor en móviles */
+    }
+
+    .transparent-image {
+        opacity: 0.5; /* Aumenta un poco la opacidad en móviles para mejor visibilidad */
+    }
+}
+
 
 
 </style>
